@@ -108,5 +108,5 @@ now = datetime.now()
 #now = datetime.now(IST)
 
 current_time = now.strftime("%H:%M:%S")
-#print("Current Time =", current_time)
+print("Current Time =", current_time)
 print(binary_clock(current_time))
