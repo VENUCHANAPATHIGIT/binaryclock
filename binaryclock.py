@@ -1,6 +1,9 @@
 #Work Done
 #time_values = ["07:24:16","13:48:18","18:48:15","11:47:55","05:46:39","20:35:19","10:51:40","10:16:17","08:17:26","17:48:59","20:04:33","01:35:39","13:23:39","01:56:09","10:50:22","07:41:09","10:20:42","02:19:30","13:41:41","03:17:28"]
+
 from datetime import datetime
+#import pytz
+
 def binary_clock(x):
 
     y = x.split(":")
@@ -9,6 +12,7 @@ def binary_clock(x):
     #Hours
     b1 = []
     hours = y[0]
+    #hours = str(int(y[0])+5)
     #print("Hours : ",hours)
     a1 = [bin(int(i))[::-1][:-2] for i in hours]
     #print("a : ",a)
@@ -30,6 +34,7 @@ def binary_clock(x):
     #Minutes
     b2 = []
     minutes = y[1]
+    #minutes = str(int(y[1])+30)
     #print("Minutes :",minutes)
     a2 = [bin(int(i))[::-1][:-2] for i in minutes]
     #print("a2 :",a)
@@ -85,7 +90,7 @@ def binary_clock(x):
     while(z < len(initial)):
         final.append(initial[z:z+4])
         z += 4
-    
+
     #print("Final :",final)
 
 
@@ -96,12 +101,12 @@ def binary_clock(x):
     #print("N : ",N)
     #print(N,sep="\n")
     return "\n".join(N)
-    
+
+#IST = pytz.timezone('Asia/Kolkota')
 
 now = datetime.now()
+#now = datetime.now(IST)
+
 current_time = now.strftime("%H:%M:%S")
-print(binary_clock("01:35:39"))
-
-
-
-
+#print("Current Time =", current_time)
+print(binary_clock(current_time))
