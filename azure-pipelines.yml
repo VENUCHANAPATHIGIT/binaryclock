@@ -31,3 +31,14 @@ steps:
   inputs:
     scriptSource: 'filePath'
     scriptPath: '$(System.DefaultWorkingDirectory)/binaryclock.py'
+
+- task: CopyFiles@2
+  inputs:
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'binary-clock'
+    publishLocation: 'Container'
