@@ -42,3 +42,9 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'binary-clock'
     publishLocation: 'Container'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'docker1'
+    repository: 'venuchanapathi1998/clockapp'
+    command: 'push'
