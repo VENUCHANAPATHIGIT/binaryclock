@@ -106,10 +106,10 @@ def binary_clock(x):
     M[3].insert(5,':')
 
     #Adding binaries
-    M[0].insert(0,'8 ')
-    M[1].insert(0,'4 ')
-    M[2].insert(0,'2 ')
-    M[3].insert(0,'1 ')
+    M[0].insert(0,'8|')
+    M[1].insert(0,'4|')
+    M[2].insert(0,'2|')
+    M[3].insert(0,'1|')
     #print("M : ",M)
 
     #print("M_final : ",M_final)
